@@ -1,0 +1,15 @@
+services:
+  interviewloop:
+    build: .
+    container_name: interviewloop
+    restart: unless-stopped
+    ports:
+      - "7860:7860"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - INTERVIEWLOOP_MODEL=${INTERVIEWLOOP_MODEL:-gpt-4o-mini}
+      - LANGSMITH_TRACING=${LANGSMITH_TRACING:-false}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY:-}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT:-interviewloop}
+    volumes:
+      - ./examples:/app/examples:ro

@@ -1,0 +1,52 @@
+{
+  "fixtures": [
+    {
+      "id": "ml-engineer-strong",
+      "label": "Strong ML engineer candidate — should score high overall",
+      "cv": "Mariam El-Sayed — Senior ML Engineer, 7 years experience. Currently at Delivery Hero (Berlin) leading recommender systems for the food-delivery feed (~30M users). Built a two-tower retrieval model that lifted CTR by 14% and replaced a legacy ALS pipeline. Owns the offline eval pipeline (NDCG@10, MRR, calibration). Comfortable with PyTorch, Ray, Spark, Vertex AI, Feast. Previously at Zalando working on size-recommendation models. MSc in Computer Science (TU Munich). Speaks German B2, English fluent.",
+      "jd": "Senior Machine Learning Engineer — N26 (Berlin)\nWe're looking for a senior MLE to own our risk-decisioning models (fraud + credit). You will: build and ship gradient-boosted and neural models on tabular data with strong eval discipline, partner with risk analysts to translate policy into features, and own the online serving path (latency budget 80ms p99). Required: 5+ years ML in production, strong Python, deep familiarity with offline/online metric divergence, experience with monotonic constraints or fairness considerations in regulated decisioning. Nice to have: financial-services domain, German.",
+      "reference_answers": {
+        "recruiter": "I've been doing recommender systems at Delivery Hero for the last three years — what's drawing me to N26 is that risk-decisioning has a much tighter feedback loop and the stakes per decision are real money. I've spent a lot of time on offline/online metric divergence in recommendations and I think those instincts transfer directly to a regulated decisioning context where calibration matters more than ranking.",
+        "hiring_manager": "At Delivery Hero I owned the migration from ALS to a two-tower retrieval model. Concretely: I designed the candidate-generation tower, ran the A/B framework with a 5%-traffic ramp over 4 weeks, and was on-call for the rollout. The headline result was +14% CTR on the home feed, but the harder lesson was that NDCG@10 didn't move much in offline — calibration on the cold-segment did, and that's what tracked online. I now treat 'offline metric that correlates with online' as a deliverable, not an assumption.",
+        "tech": "If I were standing up the risk-decisioning serving path with an 80ms p99 budget, I'd start with a gradient-boosted model — LightGBM with monotonic constraints on the protected-feature-adjacent inputs — served via an in-process Python service rather than a separate inference server, because at that latency the network hop matters. I'd cache feature lookups in a near-side Redis with feature-freshness SLAs. The tradeoff vs. a neural model is interpretability for the credit committee, and at this stage that wins.",
+        "bar_raiser": "Honestly, I'd be lying if I said I've shipped monotonic constraints in production — I've used them in offline experiments at Zalando but never under a regulator-facing audit trail. What I have done is the adjacent thing: shipping models where the explainability story is part of the launch checklist. So I'd expect to lean on someone with explicit credit-modeling experience for the first project, and my contribution would be the ML-infra discipline, not the regulatory side."
+      },
+      "expected_scores": {
+        "overall_min": 4.0,
+        "overall_max": 4.8
+      }
+    },
+    {
+      "id": "junior-vague",
+      "label": "Junior candidate with vague answers — should score mid/low",
+      "cv": "Tom Becker — Junior Developer, 1.5 years experience. Currently at a small Berlin agency building WordPress sites for clients. Some Python scripting on the side. Built a Telegram bot for a friend's club. Bootcamp graduate (Le Wagon, 2024). Looking for first 'real' engineering job.",
+      "jd": "Senior Machine Learning Engineer — N26 (Berlin)\n[same JD as above]",
+      "reference_answers": {
+        "recruiter": "I really like AI and I think N26 is doing cool stuff. I've been doing some Python projects on my own and I want to break into the field.",
+        "hiring_manager": "We built a Telegram bot. It was for a club — like, you could ask it what events were on. I used Python. It worked.",
+        "tech": "I'd probably use a neural network because they're really powerful. Maybe TensorFlow? I'd train it on the data and then deploy it.",
+        "bar_raiser": "Yeah I haven't actually shipped ML in production. I'd learn on the job."
+      },
+      "expected_scores": {
+        "overall_min": 1.5,
+        "overall_max": 2.5
+      }
+    },
+    {
+      "id": "mid-mixed",
+      "label": "Mid-level candidate with strong communication but a real tech weakness — bar raiser should find it",
+      "cv": "Jonas Weber — Software Engineer, 4 years. Backend at HelloFresh (Berlin) on the meal-planning service. Owned the rewrite of the menu-generation algorithm — moved from a brittle Python script to a constraint-solver-based scheduler (OR-Tools). Wrote the migration plan and ran the dual-write rollout. Strong on Python, Postgres, GCP. Less experience with ML — exposed via collaborating with the DS team but hasn't owned an ML model.",
+      "jd": "ML Platform Engineer — Cosuno (Berlin)\nWe're building the data + ML platform for construction-procurement. You will own the offline training infrastructure (feature store, training pipelines, eval framework) so that DS teams can ship models without writing infra. Required: 3+ years backend in production, strong Python, experience designing systems used by other engineers as customers. Nice to have: ML exposure, OR/optimization background, German.",
+      "reference_answers": {
+        "recruiter": "Looking at the JD, the 'engineers-as-customers' framing is what jumped out — at HelloFresh I owned a service that had two internal customer teams and most of my growth in the last two years was about getting that contract right. The construction-procurement domain is new to me but the platform-shape of the work is what I want more of.",
+        "hiring_manager": "I rewrote the menu-generation algorithm at HelloFresh — old version was a 2000-line Python script that crashed weekly. I modeled the problem as a constraint-satisfaction problem in OR-Tools, ran a 3-week dual-write where both systems produced menus and we diffed, and then cut over. Headline outcome: menu-generation incidents went from 1.2/week to 0.1/week and the planning team could change constraints themselves via config instead of asking us.",
+        "tech": "For a feature store I'd probably reach for Feast because it has the offline/online split built in. I'd put it behind an internal Python SDK so DS teams import one function. For the training pipeline, I'd run on Vertex or KFP. Honestly I don't have strong opinions yet on which orchestrator — I'd want to ask the DS team what they're already using.",
+        "bar_raiser": "You're right that I haven't designed a feature store from scratch — I've used Feast at a previous company but I didn't own it. I think the honest answer is I'd take the first month to build a strawman with one real model team as the design partner before generalizing. I'd be nervous about over-designing the abstraction in week one."
+      },
+      "expected_scores": {
+        "overall_min": 3.0,
+        "overall_max": 3.8
+      }
+    }
+  ]
+}

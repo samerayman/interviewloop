@@ -1,0 +1,34 @@
+Samer Ayman Onaj
+AI / Automation Engineer — Berlin, Germany
+
+SUMMARY
+Engineer with experience designing production LLM systems and automation
+workflows. Comfortable across the stack: Python, FastAPI, Postgres, vector
+DBs, n8n, and the Anthropic / OpenAI APIs. Strong on system design, eval
+discipline, and shipping end-to-end.
+
+PROJECTS
+- LLM Multi-Agent Defense System (2025–2026)
+  5-agent prompt-injection defense pipeline running entirely on a free stack
+  (Ollama + SQLite). Designed the supervisor agent and the eval harness.
+
+- LLM Brand Visibility Tracker (2026)
+  GEO/AEO portfolio app that benchmarks brand mention rates across 4 free
+  LLM providers. Built with Neon Postgres + Streamlit.
+
+- FormFlow AI (2026)
+  n8n-based inbound customer-request triage workflow with a dedicated error
+  sub-workflow. Routes triaged requests to Slack channels, sends auto-replies,
+  and logs to Google Sheets.
+
+- InterviewLoop (this project, 2026)
+  LangChain + LangGraph multi-agent mock-interview panel with human-in-the-loop
+  interrupts, SQLite checkpointing, and a LangSmith eval harness.
+
+SKILLS
+Python, LangChain, LangGraph, n8n, FastAPI, Postgres / Neon, vector search,
+Docker, Git, Streamlit, Gradio, Ollama. Spoken: English (fluent), Arabic (native),
+German (learning).
+
+EDUCATION
+B.Sc. Computer Science.

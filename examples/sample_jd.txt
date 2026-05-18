@@ -1,0 +1,36 @@
+AI Engineer (m/f/d) — Cosuno (Berlin / remote-friendly within DACH)
+
+About the role
+We are building the construction-procurement platform of record for the DACH
+market. We are looking for an AI Engineer to join the small team owning the
+LLM-powered features in our product — document understanding, intelligent
+search, and automated workflows for our customers' procurement teams.
+
+You will
+- Design and ship LLM-powered features end-to-end: from problem framing with
+  PM, through prototype, to production rollout with monitoring.
+- Own the evaluation discipline for our LLM features. We don't ship anything
+  we can't measure.
+- Build agentic workflows (LangChain / LangGraph or similar) for multi-step
+  document-understanding tasks.
+- Partner with platform engineers on the serving path: latency budgets,
+  cost budgets, fallback paths.
+
+Required
+- 3+ years of production software engineering. You have shipped systems that
+  real customers depend on.
+- Strong Python.
+- Experience designing and shipping LLM-powered features in production —
+  not just notebooks. We care about retries, observability, evals, and cost.
+- Comfort owning a feature from "we should do X" to "X is running in prod".
+
+Nice to have
+- LangGraph or another agent-orchestration framework experience.
+- German (we work in English internally but our customers are German-speaking).
+- Background in regulated industries or domains with structured documents.
+
+Why us
+Construction is one of the last large industries still running on PDFs and
+spreadsheets. The work is technically interesting (lots of messy, structured-
+ish documents) and the impact is concrete (procurement cycles measurably
+shorter).
