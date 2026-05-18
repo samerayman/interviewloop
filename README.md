@@ -141,4 +141,4 @@ interviewloop/
 
 ## Author
 
-Built by **Samer Ayman Onaj** as a portfolio piece for AI/ML engineer roles. Feedback welcome.
+Built by **Samer Farid** as a portfolio piece for AI/ML engineer roles. Feedback welcome.
